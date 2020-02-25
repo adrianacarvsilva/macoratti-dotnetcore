@@ -66,4 +66,37 @@ Development, Staging e Production.
 Usando a interface IHostingEnvironment e os métodos IsDevelopment(),
 IsStaging() e IsProduction().
 
+12- Qual a localização dos arquivos estáticos em uma aplicação ASP .NET Core ? 
+Os arquivos estáticos normalmente estão localizados na pasta raiz da web(web root) (<diretório de conteúdo>/ wwwroot). 
+
+13- Quais os procedimentos para habilitar o acesso a arquivos estáticos ? 
+
+1- Inserir pacote :  Microsoft.AspNetCore.StaticFiles 
+
+2- Definir no método Configure da classe Startup :   app.UseStaticFiles(); 
+
+Public void Configure (IApplicationBuilder app) 
+{ 
+	App.UseStaticFiles (); 
+} 
+
+14- Qual o procedimento para ler o arquivo de configuração appsettings.json ? 
+Definir uma propriedade do tipo IConfiguration e a seguir usar uma instância da classe ConfigurationBuilder e
+definir o caminho base e a seguir incluir o provedor para ler arquivos no formato JSON no construtor da classe Startup. 
+
+public IConfiguration _config { get; set; } 
+public Startup() {             
+
+	var builder = new ConfigurationBuilder()                 
+	.SetBasePath(Directory.GetCurrentDirectory())                 
+	.AddJsonFile("appsettings.json"); 
+    _config = builder.Build(); 
+} 
+
+15 – Quais as etapas para criar e usar um serviço em uma aplicação ASP .NET Core ? 
+
+1- Definir uma interface para o serviço 
+2- Implementar o serviço na classe de serviço  
+3- Registrar a interface e o serviço em ConfigureServices() 
+4- Injetar o serviço no método Configure() 
 
