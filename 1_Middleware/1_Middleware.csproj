@@ -5,4 +5,12 @@
     <RootNamespace>_1_Middleware</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="settings.ini" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="settings.ini" />
+  </ItemGroup>
+
 </Project>

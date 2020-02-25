@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/Macoratti
+/1_Middleware/bin/Debug/netcoreapp3.0
+/1_Middleware/obj/Debug/netcoreapp3.0/staticwebassets
