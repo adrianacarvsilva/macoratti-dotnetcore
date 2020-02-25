@@ -1,0 +1,69 @@
+1 - O que é a ASP.NET Core 1.1?
+
+A ASP.NET Core é a nova versão da ASP.NET. Ela é open-source e multiplataforma dando suporte
+aos ambientes Windows, Mac e Linux, com suporte a criação de aplicações
+baseadas em nuvem, aplicações IoT e aplicações Mobile.
+
+2 - Qual a vantagem da inclusão de pacotes Nuget em aplicações ASP.NET Core?
+
+A inclusão de pacotes NUGET torna as aplicações otimizadas pois utilizam somente
+pacotes necessários tornando a aplicação mais segura e leve.
+
+3 - Qual o propósito da função WebHostBuilder()?
+
+Ela é usada para criar o fluxo http via webHostBuilder.Use() fazendo o encadeamento
+das chamadas subsequentes e executando com webHostBuilder.Build() estado disponível
+no namespace MicrosoftAspNet.Hosting
+
+Usamos uma instância de WebHostBuilder para criar um host na qual a aplicação
+será executada. Ela cria o host e retornar uma instância de WebHost que referencia
+o servidor que irá tratar as requisições.
+
+4 - O que é .NET Core?
+
+O .NET Core é uma versão mais recente da plataforma .NET, que é multiplataforma
+e suporta o Windows, MacOS e Linux e pode ser usada em cenários de dispositivos
+móveis, na nuvem e em aplicações embutidas/IoT.
+
+5 - Qual o propósito da classe Startup?
+
+Essa classe é usada para inicializar uma aplicação ASP.NET Core sendo chamada
+no método Main().
+
+6 - Qaul o propósito do método ConfigureServices?
+
+É um método opcional, mas quando definido é chamado antes do método Configure().
+Nesta classe definimos os serviços usados pela aplicação como MVC, Entity
+Framework, Logging, CORS, etc.
+
+7 - Qual o propósito do método Configure?
+
+Define como a aplicação vai responder as requisições HTTP. Nela definimos
+os middlewares usados pela aplicação.
+
+8 - Quais os modos de criação de instâncias de serviços usados pela coleção
+services? Explique cada um deles.
+
+AddSingleton - Cria uma única instância que é usada por toda a aplicação.
+AddScoped - Cria uma instância por requisição dentro do escopo.
+AddTransient - Um objto do serviço é criado toda a vez que um objeto for requisitado.
+
+9- Descreva o fluxo de inicialização de uma aplicação ASP.NET Core:
+
+A aplicação é iniciada no método Main da classe Programa onde é inicializado o web
+host e invocada a classe Startup e define os serviços para a aplicação
+no método ConfigureServices() e a seguir no método Configure() onde os
+componentes middlewares são registrados no fluxo de atendimento.
+
+10 - Qual o nome da variável usada para identificar o nome do ambiente e quais
+os valores padrão?
+
+O nome da variável é ASPNETCORE_ENVIRONMENT e os valores padrão são 
+Development, Staging e Production.
+
+11 - Como podemos tratar os valores da variável de ambiente via código?
+
+Usando a interface IHostingEnvironment e os métodos IsDevelopment(),
+IsStaging() e IsProduction().
+
+
